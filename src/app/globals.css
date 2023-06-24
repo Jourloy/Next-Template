@@ -3,25 +3,60 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
+}
+
+html {
+    height: 100%;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    color: white;
+    background: #000000;
+    min-height: 100%;
+}
+
+@font-face {
+    font-family: 'SF Pro Display Bold';
+    src: local('SF Pro Display Bold'), url(../fonts/SFProDisplay-Bold.otf) format('OpenType');
+}
+
+@font-face {
+    font-family: 'SF Pro Display Light';
+    src: local('SF Pro Display Light'), url(../fonts/SFProDisplay-Light.ttf) format('OpenType');
+}
+
+@font-face {
+    font-family: 'SF Pro Display Medium';
+    src: local('SF Pro Display Medium'), url(../fonts/SFProDisplay-Medium.otf) format('OpenType');
+}
+
+@font-face {
+    font-family: 'SF Pro Display Regular';
+    src: local('SF Pro Display Regular'), url(../fonts/SFProDisplay-Regular.otf) format('OpenType');
+}
+
+@font-face {
+    font-family: 'SF Pro Display Thin';
+    src: local('SF Pro Display Thin'), url(../fonts/SFProDisplay-Thin.ttf) format('OpenType');
+}
+
+h1 {
+    font-family: 'SF Pro Display Bold';
+    line-height: 1;
+}
+
+h2 {
+    font-family: 'SF Pro Display Bold';
+    line-height: 1;
 }

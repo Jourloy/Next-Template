@@ -1,34 +1,85 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<a href="https://jourloy.com/">
+	<h1 align="center">
+		Next Template
+	</h1>
+</a>
+
+## Description
+
+This is a next template repository
+
+Features:
+
+| Features    | Description                                  |
+|-------------|----------------------------------------------|
+| Next.js     | SSR and SEO. Also good routing               |
+| TailwindCSS | Make CSS simple                              |
+| Sentry      | Collect errors                               |
+| Zustand     | Simple store like Redux                      |
+| Docker      | Containerization. Support next.js hot reload |
 
 ## Getting Started
 
-First, run the development server:
+### Installation
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```shell
+$ yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Prepare
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### Sentry
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+For collect all errors you should add Setry config
 
-## Learn More
+```shell
+$ npx @sentry/wizard@latest -i nextjs
+```
 
-To learn more about Next.js, take a look at the following resources:
+And check **sentry.*.config.ts**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Git
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+##### Change remote
 
-## Deploy on Vercel
+```shell
+$ git remote remove origin
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+$ git remote add [name] [link]
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+##### Push
+
+You can push with autoversioning
+
+```shell
+$ npm version [major|minor|patch]
+```
+
+### Running the app
+
+#### Docker
+
+```shell
+$ docker-compose up -d
+```
+
+#### Yarn
+
+```shell
+# Developmemt
+$ yarn dev
+
+# Production (Not recommend)
+$ yarn start
+```
+
+### Running the storybook
+
+```shell
+# Development
+$ yarn storybook
+
+# Build
+$ yarn build-storybook
+```
